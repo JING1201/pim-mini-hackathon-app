@@ -12,7 +12,6 @@ import {
   Alert,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
@@ -52,7 +51,7 @@ export default class HomeScreen extends React.Component {
         <View style={styles.tabBarInfoContainer}>
           <Button
             onPress={() => {
-              navigate('Links')
+              navigate('Idea')
             }}
             title="ものづくりを始めよう！"
           />
@@ -60,17 +59,6 @@ export default class HomeScreen extends React.Component {
       </View>
     );
   }
-
-  
-  _handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
-  };
-
-  _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
-  };
 }
 
 const styles = StyleSheet.create({
