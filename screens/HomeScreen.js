@@ -25,25 +25,21 @@ export default class HomeScreen extends React.Component {
             <Image
               source={
                 __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
+                  ? require('../assets/images/logo.png')
+                  : require('../assets/images/logo.png')
               }
               style={styles.welcomeImage}
             />
           </View>
 
           <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>Get started by opening</Text>
+            <Text style={styles.getStartedText}>島根大学ものづくり部Pimは2014年4月に設立されソフト、ハード問わず様々な学生がモノを作っている大学公認サークルです。VRなどの最新技術を駆使し、展示会やコンテストに参加、「ものづくり」の楽しさを内外問わず広める活動をしています。</Text>
 
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
             </View>
 
-            <Text style={styles.getStartedText}>
-              日本語でテスト
-            </Text>
           </View>
 
           <View style={styles.helpContainer}>
