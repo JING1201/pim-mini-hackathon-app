@@ -9,9 +9,10 @@ import {
   View,
   Linking,
   Button,
+  Alert,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
@@ -20,6 +21,7 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -50,7 +52,7 @@ export default class HomeScreen extends React.Component {
         <View style={styles.tabBarInfoContainer}>
           <Button
             onPress={() => {
-              Alert.alert('You tapped the button!');
+              navigate('Links')
             }}
             title="ものづくりを始めよう！"
           />
@@ -90,13 +92,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 20,
+    paddingBottom: 10,
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 150,
+    height: 100,
+    alignItems: 'center',
     resizeMode: 'contain',
     marginTop: 3,
-    marginLeft: -10,
   },
   getStartedContainer: {
     alignItems: 'center',
