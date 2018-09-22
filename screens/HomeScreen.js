@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Linking,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -31,14 +32,16 @@ export default class HomeScreen extends React.Component {
               style={styles.welcomeImage}
             />
           </View>
-
-          <View style={styles.getStartedContainer}>
+ 
+         <View style={styles.getStartedContainer}>
 
             <Text style={styles.getStartedText}>島根大学ものづくり部Pimは2014年4月に設立されソフト、ハード問わず様々な学生がモノを作っている大学公認サークルです。VRなどの最新技術を駆使し、展示会やコンテストに参加、「ものづくり」の楽しさを内外問わず広める活動をしています。</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
+            
+            <TouchableOpacity onPress={ ()=>{ Linking.openURL('https://pim-shimane.com/')}} style={styles.contentContainer}>
+              <View style={styles.codeHighlightContainer}>
+                <MonoText style={styles.codeHighlightText}> https://pim-shimane.com/</MonoText>
+              </View>
+            </TouchableOpacity> 
 
           </View>
 
@@ -60,29 +63,7 @@ export default class HomeScreen extends React.Component {
     );
   }
 
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
-        </Text>
-      );
-
-      return (
-        <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
-          tools. {learnMoreButton}
-        </Text>
-      );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
-      );
-    }
-  }
-
+  
   _handleLearnMorePress = () => {
     WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
   };
@@ -107,7 +88,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    paddingTop: 20,
   },
   welcomeContainer: {
     alignItems: 'center',
@@ -134,7 +115,8 @@ const styles = StyleSheet.create({
   codeHighlightContainer: {
     backgroundColor: 'rgba(0,0,0,0.05)',
     borderRadius: 3,
-    paddingHorizontal: 4,
+    paddingHorizontal: 0,
+    paddingVertical: 5,
   },
   getStartedText: {
     fontSize: 17,
