@@ -2,7 +2,6 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
-import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import IdeaScreen from '../screens/IdeaScreen';
 import MaterialScreen from '../screens/MaterialScreen';
@@ -10,7 +9,7 @@ import StartScreen from '../screens/StartScreen';
 import SatisfactionScreen from '../screens/SatisfactionScreen';
 import PhotoScreen from '../screens/PhotoScreen';
 import ShareScreen from '../screens/ShareScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import ReflectionScreen from '../screens/ReflectionScreen';
 
 export default createStackNavigator({
   Home: HomeScreen,
@@ -20,6 +19,7 @@ export default createStackNavigator({
   Satisfaction: SatisfactionScreen,
   Photo: PhotoScreen,
   Share: ShareScreen,
+  Reflection: ReflectionScreen,
 },{ headerMode: 'none' });
 
 

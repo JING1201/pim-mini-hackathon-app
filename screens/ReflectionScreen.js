@@ -8,7 +8,7 @@ import { ScrollView,
 import { Slider } from 'react-native-elements'
 import { ExpoLinksView } from '@expo/samples';
 
-export default class ShareScreen extends React.Component {
+export default class ReflectionScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -24,18 +24,46 @@ export default class ShareScreen extends React.Component {
       <ScrollView style={styles.container}>
         <View style = {styles.container}>
           <Text style = {styles.getStartedText}>
-            その写真を
-          </Text>
-          <Text style = {styles.centerText}>
-            ツイッターで共有しましょう！
+            反省
           </Text>
         </View>
+        <View style = {styles.container}>
+          <Text style = {styles.normalText}>
+            良かった点
+          </Text>
+          <TextInput
+            style={styles.textInput}
+            placeholder = "ex. "
+            onChangeText={(text) => this.setState({text})}
+            />
+        </View>
+        <View style = {styles.container}>
+          <Text style = {styles.normalText}>
+            悪かった点
+          </Text>
+          <TextInput
+            style={styles.textInput}
+            placeholder = "ex. "
+            onChangeText={(text) => this.setState({text})}
+            />
+        </View>
+        <View style = {styles.container}>
+          <Text style = {styles.normalText}>
+            次に活かしたい点
+          </Text>
+          <TextInput
+            style={styles.textInput}
+            placeholder = "ex. "
+            onChangeText={(text) => this.setState({text})}
+            />
+        </View>
+
         <View style={styles.tabBarInfoContainer}>
             <Button
                 onPress={() => {
-                    navigate('Reflection')
+                    navigate('Home')
                 }}
-                title="次へ"
+                title="ホームへ"
             />
         </View>
       </ScrollView>
