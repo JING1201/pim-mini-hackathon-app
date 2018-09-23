@@ -7,48 +7,38 @@ import { ScrollView,
   Button } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
-export default class IdeaScreen extends React.Component {
+export default class StartScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
   
   constructor(props) {
     super(props);
-    this.state = {text: '', showButton: false}
+    this.state = {text: ''}
   }
 
   render() {
     const { navigate } = this.props.navigation;
-    if (this.state.text != ''){
-      this.state.showButton = true;
-    }
-    else{
-      this.state.showButton =false;
-    }
     return (
       <ScrollView style={styles.container}>
         <View style = {styles.container}>
           <Text style = {styles.getStartedText}>
-            では作りましょう！
+            さあ、作成を始めましょう！！
           </Text>
         </View>
         <View style = {styles.container}>
-          <TextInput
-            style={styles.textInput}
-            placeholder = "作るために必要なものは？"
-            onChangeText={(text) => this.setState({text})}
-          />
+            <Text style = {styles.getStartedText}>
+                　君のプロジェクト：（  Text from IdeaScreen)
+            </Text>
         </View>
-        {this.state.showButton && 
-          <View style={styles.tabBarInfoContainer}>
+        <View style={styles.tabBarInfoContainer}>
             <Button
-              onPress={() => {
-                navigate('Start')
-              }}
-              title="次へ"
+                onPress={() => {
+                    navigate('Satisfaction')
+                }}
+                title="できた！"
             />
-          </View>
-        }
+        </View>
       </ScrollView>
     );
   }
