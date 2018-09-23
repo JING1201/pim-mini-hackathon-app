@@ -29,13 +29,13 @@ export default class IdeaScreen extends React.Component {
       <ScrollView style={styles.container}>
         <View style = {styles.container}>
           <Text style = {styles.getStartedText}>
-            とりあえず、アイデアを考えよう！
+            では作りましょう！
           </Text>
         </View>
         <View style = {styles.container}>
           <TextInput
             style={styles.textInput}
-            placeholder = "作りたいものは？"
+            placeholder = "作るために必要なものは？"
             onChangeText={(text) => this.setState({text})}
           />
         </View>
@@ -43,7 +43,7 @@ export default class IdeaScreen extends React.Component {
           <View style={styles.tabBarInfoContainer}>
             <Button
               onPress={() => {
-                navigate('Material')
+                navigate('Home')
               }}
               title="次へ"
             />
