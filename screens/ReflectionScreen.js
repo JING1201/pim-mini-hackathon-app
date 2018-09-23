@@ -61,9 +61,9 @@ export default class ReflectionScreen extends React.Component {
         <View style={styles.tabBarInfoContainer}>
             <Button
                 onPress={() => {
-                    navigate('Home')
+                    navigate('Conclusion')
                 }}
-                title="ホームへ"
+                title="完成"
             />
         </View>
       </ScrollView>

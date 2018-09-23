@@ -10,6 +10,7 @@ import SatisfactionScreen from '../screens/SatisfactionScreen';
 import PhotoScreen from '../screens/PhotoScreen';
 import ShareScreen from '../screens/ShareScreen';
 import ReflectionScreen from '../screens/ReflectionScreen';
+import ConclusionScreen from '../screens/ConclusionScreen';
 
 export default createStackNavigator({
   Home: HomeScreen,
@@ -20,6 +21,7 @@ export default createStackNavigator({
   Photo: PhotoScreen,
   Share: ShareScreen,
   Reflection: ReflectionScreen,
+  Conclusion: ConclusionScreen,
 },{ headerMode: 'none' });
 
 

@@ -30,7 +30,7 @@ export default class StartScreen extends React.Component {
             <TextInput
                 multiline = {true}
                 style={styles.textInput}
-                placeholder = "プロジェクトにタイトルをつけよう！"
+                placeholder = "プロジェクトのタイトル"
                 onChangeText={(text) => this.setState({text})}
             />
         </View>
@@ -39,7 +39,7 @@ export default class StartScreen extends React.Component {
                 onPress={() => {
                     navigate('Satisfaction')
                 }}
-                title="できた！"
+                title="完成した！"
             />
         </View>
       </ScrollView>

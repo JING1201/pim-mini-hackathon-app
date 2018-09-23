@@ -8,7 +8,7 @@ import { ScrollView,
 import { Slider } from 'react-native-elements'
 import { ExpoLinksView } from '@expo/samples';
 
-export default class ShareScreen extends React.Component {
+export default class ConclusionScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -24,18 +24,20 @@ export default class ShareScreen extends React.Component {
       <ScrollView style={styles.container}>
         <View style = {styles.container}>
           <Text style = {styles.getStartedText}>
-            その写真を
+            お疲れ様でした！
           </Text>
-          <Text style = {styles.centerText}>
-            ツイッターで共有しましょう！
+        </View>
+        <View style = {styles.container}>
+          <Text style = {styles.getStartedText}>
+            PimのLT会に参加して活動報告しませんか？
           </Text>
         </View>
         <View style={styles.tabBarInfoContainer}>
             <Button
                 onPress={() => {
-                    navigate('Reflection')
+                    navigate('Home')
                 }}
-                title="次へ"
+                title="ホームへ"
             />
         </View>
       </ScrollView>
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
   },
   centerText: {
     padding: 40,
-    fontSize: 30,
+    fontSize: 42,
     color: 'rgba(96,100,109, 1)',
     lineHeight: 50,
     textAlign: 'center',
