@@ -8,6 +8,8 @@ import IdeaScreen from '../screens/IdeaScreen';
 import MaterialScreen from '../screens/MaterialScreen';
 import StartScreen from '../screens/StartScreen';
 import SatisfactionScreen from '../screens/SatisfactionScreen';
+import PhotoScreen from '../screens/PhotoScreen';
+import ShareScreen from '../screens/ShareScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 export default createStackNavigator({
@@ -16,6 +18,8 @@ export default createStackNavigator({
   Material: MaterialScreen,
   Start: StartScreen,
   Satisfaction: SatisfactionScreen,
+  Photo: PhotoScreen,
+  Share: ShareScreen,
 },{ headerMode: 'none' });
 
 

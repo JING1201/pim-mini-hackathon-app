@@ -8,7 +8,7 @@ import { ScrollView,
 import { Slider } from 'react-native-elements'
 import { ExpoLinksView } from '@expo/samples';
 
-export default class SatisfactionScreen extends React.Component {
+export default class PhotoScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -24,23 +24,16 @@ export default class SatisfactionScreen extends React.Component {
       <ScrollView style={styles.container}>
         <View style = {styles.container}>
           <Text style = {styles.getStartedText}>
-            満足度
+            それでは
           </Text>
-        </View>
-        <View style = {styles.container}>
-            <View style = {styles.codeHighLightContainer}>
-                <Text style = {styles.normalText}>{this.state.value}</Text>
-            </View>
-            <Slider
-                value={this.state.value}
-                maximumValue={100}
-                thumbTintColor={"#c60000"}
-                onValueChange={(value) => this.setState({value})} />
+          <Text style = {styles.centerText}>
+            制作物を撮影してください
+          </Text>
         </View>
         <View style={styles.tabBarInfoContainer}>
             <Button
                 onPress={() => {
-                    navigate('Photo')
+                    navigate('Share')
                 }}
                 title="次へ"
             />
@@ -62,6 +55,13 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     padding: 10,
+    fontSize: 42,
+    color: 'rgba(96,100,109, 1)',
+    lineHeight: 50,
+    textAlign: 'center',
+  },
+  centerText: {
+    padding: 40,
     fontSize: 42,
     color: 'rgba(96,100,109, 1)',
     lineHeight: 50,
