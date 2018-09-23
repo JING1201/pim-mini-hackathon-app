@@ -27,9 +27,12 @@ export default class StartScreen extends React.Component {
           </Text>
         </View>
         <View style = {styles.container}>
-            <Text style = {styles.getStartedText}>
-                　君のプロジェクト：（  Text from IdeaScreen)
-            </Text>
+            <TextInput
+                multiline = {true}
+                style={styles.textInput}
+                placeholder = "プロジェクトにタイトルをつけよう！"
+                onChangeText={(text) => this.setState({text})}
+            />
         </View>
         <View style={styles.tabBarInfoContainer}>
             <Button

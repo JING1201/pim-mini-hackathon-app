@@ -5,6 +5,7 @@ import { ScrollView,
   View,
   Text,
   Button } from 'react-native';
+import { Slider } from 'react-native-elements'
 import { ExpoLinksView } from '@expo/samples';
 
 export default class StartScreen extends React.Component {
@@ -23,20 +24,25 @@ export default class StartScreen extends React.Component {
       <ScrollView style={styles.container}>
         <View style = {styles.container}>
           <Text style = {styles.getStartedText}>
-            さあ、作成を始めましょう！！
+            満足度
           </Text>
         </View>
         <View style = {styles.container}>
-            <Text style = {styles.getStartedText}>
-                　君のプロジェクト：（  Text from IdeaScreen)
-            </Text>
+            <View style = {styles.codeHighLightContainer}>
+                <Text style = {styles.normalText}>{this.state.value}</Text>
+            </View>
+            <Slider
+                value={this.state.value}
+                maximumValue={100}
+                thumbTintColor={"#c60000"}
+                onValueChange={(value) => this.setState({value})} />
         </View>
         <View style={styles.tabBarInfoContainer}>
             <Button
                 onPress={() => {
                     navigate('Satisfaction')
                 }}
-                title="できた！"
+                title="次へ"
             />
         </View>
       </ScrollView>
@@ -59,6 +65,18 @@ const styles = StyleSheet.create({
     fontSize: 42,
     color: 'rgba(96,100,109, 1)',
     lineHeight: 50,
+    textAlign: 'center',
+  },
+  codeHighlightContainer: {
+    backgroundColor: 'rgba(0,0,0,0.05)',
+    borderRadius: 3,
+    paddingHorizontal: 0,
+    paddingVertical: 5,
+  },
+  normalText: {
+    fontSize: 17,
+    color: 'rgba(96,100,109, 1)',
+    lineHeight: 24,
     textAlign: 'center',
   },
 });
