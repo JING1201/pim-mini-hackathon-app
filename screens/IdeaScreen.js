@@ -3,7 +3,8 @@ import { ScrollView,
   StyleSheet, 
   TextInput, 
   View,
-  Text } from 'react-native';
+  Text,
+  Button } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
 export default class IdeaScreen extends React.Component {
@@ -13,10 +14,17 @@ export default class IdeaScreen extends React.Component {
   
   constructor(props) {
     super(props);
-    this.state = {text: ''};
+    this.state = {text: '', showButton: false}
   }
 
   render() {
+    const { navigate } = this.props.navigation;
+    if (this.state.text != ''){
+      this.state.showButton = true;
+    }
+    else{
+      this.state.showButton =false;
+    }
     return (
       <ScrollView style={styles.container}>
         <View style = {styles.container}>
@@ -31,10 +39,21 @@ export default class IdeaScreen extends React.Component {
             onChangeText={(text) => this.setState({text})}
           />
         </View>
+        {this.state.showButton && 
+          <View style={styles.tabBarInfoContainer}>
+            <Button
+              onPress={() => {
+                navigate('Home')
+              }}
+              title="次へ"
+            />
+          </View>
+        }
       </ScrollView>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
